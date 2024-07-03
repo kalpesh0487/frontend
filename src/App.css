@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.customShadow{
+  box-shadow: 5px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*** User Table ***/
+.userTabel{
+  @apply bg-white
+}
+.userTabel th{
+  @apply border text-base font-medium 
+}
+.userTabel td{
+  @apply border text-base text-center
+}

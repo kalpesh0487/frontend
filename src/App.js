@@ -1,24 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header'
+import Footer from './components/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import SummaryApi from './common';
+import { useEffect } from 'react';
+import Context from './context';
+import { useDispatch } from 'react-redux';
+import { setUserDetails } from './store/userSlice';
 
 function App() {
+  const dispatch = useDispatch()
+
+  const fetchUserDetails = async()=>{
+    const dataResponse = await fetch(SummaryApi.curret_user.url,{
+      method: SummaryApi.curret_user.method,
+      credentials: 'include'
+    })
+    const dataApi = await dataResponse.json()
+    if(dataApi.success){
+      dispatch(setUserDetails(dataApi.data))
+    }
+  }
+
+  useEffect(()=>{
+    // user details
+    fetchUserDetails()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <Context.Provider value={{
+    fetchUserDetails // user detail fetch
+  }}>
+    <ToastContainer/>
+    <Header/>
+    <main className='min-h-[calc(100vh-120px)]'>
+      <Outlet/>
+    </main>
+    <Footer/>
+    </Context.Provider>
+  </>
   );
 }
 
