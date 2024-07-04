@@ -12,10 +12,21 @@ const CategoryList = () => {
 
     const fetchCategoryProduct = async() =>{
         setLoading(true)
-        const response = await fetch(SummaryApi.categoryProduct.url)
-        const dataResponse = await response.json()
-        setLoading(false)
-        setCategorProduct(dataResponse.data)
+        // const response = await fetch(SummaryApi.categoryProduct.url)
+        // const dataResponse = await response.json()
+        // setLoading(false)
+        // setCategorProduct(dataResponse.data)
+
+        try {
+            const response = await fetch(SummaryApi.categoryProduct.url);
+            const dataResponse = await response.json();
+            setCategorProduct(dataResponse.data || []);
+        } catch (error) {
+            console.error('Error fetching category products:', error);
+            setCategorProduct([]);
+        } finally {
+            setLoading(false);
+        }
     }
 
     useEffect(()=>{
