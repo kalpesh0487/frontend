@@ -51,3 +51,9 @@
 .userTabel td{
   @apply border text-base text-center
 }
+
+/*** scroll bar none **/
+.scrollbar-none ::-webkit-scrollbar{
+  display: none;
+  color: blue;
+} 
