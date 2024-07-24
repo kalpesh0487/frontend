@@ -7,21 +7,21 @@ import VerticalCardProduct from '../components/VerticalCardProduct'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-[#F2EAD3]'>
       <CategoryList/>
       <BannerProduct/>
-      <HorizontalCardProduct category={"airpodes"} heading={"Top Airpods"}/>
-      <HorizontalCardProduct category={"mouse"} heading={"Top Mouse"}/>
-      <VerticalCardProduct category={"mobiles"} heading={"Top Mobile Phones"}/>
-      <VerticalCardProduct category={"camera"} heading={"Top Camera"}/>
-      <VerticalCardProduct category={"Refrigerator"} heading={"Top Refrigerator"}/>
-      <VerticalCardProduct category={"printers"} heading={"Top printers"}/>
-      <VerticalCardProduct category={"speakers"} heading={"Top speakers"}/>
-      <VerticalCardProduct category={"trimmers"} heading={"Top trimmers"}/>
-      <VerticalCardProduct category={"earphones"} heading={"Top earphones"}/>
-      <VerticalCardProduct category={"processor"} heading={"Top processor"}/>
-      <VerticalCardProduct category={"television"} heading={"Top television"}/>
-      <VerticalCardProduct category={"watches"} heading={"Top watches"}/>
+      <HorizontalCardProduct category={"portrait"} heading={"Top Portrait Art"}/>
+      <HorizontalCardProduct category={"landscape"} heading={"Top Landscape Art"}/>
+      <VerticalCardProduct category={"digital"} heading={"Top Digital Art"}/>
+      <VerticalCardProduct category={"mandala"} heading={"Top Mandala Art"}/>
+      <VerticalCardProduct category={"madhubani"} heading={"Top Madhubani Art"}/>
+      <VerticalCardProduct category={"statue"} heading={"Top Statue Art"}/>
+      <VerticalCardProduct category={"zen"} heading={"Top Zen Art"}/>
+      <VerticalCardProduct category={"comic"} heading={"Top Comic Art"}/>
+      <VerticalCardProduct category={"scandinavian"} heading={"Top Scandinavian Art"}/>
+      <VerticalCardProduct category={"expressionist"} heading={"Top Expressionist Art"}/>
+      <VerticalCardProduct category={"minimalistic"} heading={"Top Minimalistic Art"}/>
+      <VerticalCardProduct category={"brutalism"} heading={"Top Brutalism Art"}/>
     </div>
   )
 }

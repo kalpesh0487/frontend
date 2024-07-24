@@ -54,37 +54,37 @@ const Login = () => {
   }
   
   return (
-    <section id='login'>
-        <div className='mx-auto container p-4'>
+    <section id='login' className='bg-[#F2EAD3]'>
+        <div className='mx-auto container p-4 bg-[#F2EAD3]'>
 
-          <div className='p-5 w-full bg-[#F3F6F7] max-w-md mx-auto rounded h-full'>
-            <div className='w-20 h-20 mx-auto'>
+          <div className='p-5 w-full bg-[#F2EAD3] border border-black max-w-md mx-auto rounded h-full'>
+            <div className='w-20 h-20 mx-auto '>
               <img src={loginIcons} alt='login icons'/>
             </div>
 
-            <form className='pt-6 flex flex-col gap-2' onSubmit={handleOnSubmit}>
+            <form className='pt-6 flex flex-col gap-2 ' onSubmit={handleOnSubmit}>
               <div className='grid'>
                 <label>Email: </label>
-                <div className='bg-slate-100 p-2 '>
+                <div className='bg-[#F2EAD3] border border-black p-2 rounded-lg'>
                   <input 
                     type='email' 
-                    placeholder='enter email' 
+                    placeholder='Enter email' 
                     name='email'
                     value={data.email}
                     onChange={handleOnChange}
-                    className='w-full h-full outline-none bg-transparent'/>
+                    className='w-full h-full outline-none bg-transparent placeholder-[#6F4E37]'/>
                 </div>
               </div>
               <div className='grid'>
                 <label>Password: </label>
-                <div className='bg-slate-100 p-2 flex'>
+                <div className='flex bg-[#F2EAD3] border border-black p-2 rounded-lg placeholder-[#6F4E37]'>
                   <input 
                     type={showPassword ? "text" : "password"} 
-                    placeholder='enter password' 
+                    placeholder='Enter password' 
                     value={data.password}
                     name='password'
                     onChange={handleOnChange}
-                    className='w-full h-full outline-none bg-transparent'/>
+                    className='w-full h-full outline-none bg-transparent placeholder-[#6F4E37]'/>
                   <div className='cursor-pointer text-xl' onClick={()=>setShowPassword((prevVal) => !prevVal)}>
                     <span>
                       {
@@ -99,16 +99,16 @@ const Login = () => {
                     </span>
                   </div>
                 </div>
-                <Link to={'/forgot-password'} className='mt-4 block w-fit ml-auto hover:underline hover:text-red-600'>
+                <Link to={'/forgot-password'} className='mt-4 block w-fit ml-auto hover:underline hover:text-[#3F2305]'>
                       Forgot password ?
                 </Link>
               </div>
-              <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full
+              <button className='bg-[#6F4E37] border-2 border-black text-white hover:bg-[#3F2305] px-6 py-2 w-full max-w-[150px] rounded-full
               hover:scale-110 transition-all mx-auto block mt-6'>
                 Login
               </button>
             </form>
-            <p className='py-5'>Don't have account? <Link to={"/sign-up"} className='text-red-600 hover:text-red-700 hover:underline'>Sign up</Link></p>
+            <p className='py-5'>Don't have account? <Link to={"/sign-up"} className='text-black hover:text-[#3F2305] hover:underline'>Sign up</Link></p>
           </div> 
         </div>
     </section>

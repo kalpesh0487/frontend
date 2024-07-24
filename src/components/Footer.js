@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='bg-slate-200'>
+    <footer className='bg-[#6F4E37]'>
       <div className='container mx-auto p-4'>
-        <p className='text-center font-bold' title='youtube channel'>Code with me</p>
+        <p className='text-center font-bold' title='youtube channel'>This is ArtWave</p>
       </div>
     </footer>
   )

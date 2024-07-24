@@ -92,13 +92,13 @@ const UploadProduct = ({
     <div className='fixed bg-slate-200 bg-opacity-35 w-full h-full top-0 left-0 bottom-0 right-0 flex justify-center items-center'>
         <div className='bg-white p-4 rounded w-full max-w-2xl h-full max-h-[80%] overflow-hidden'>
             <div className='flex justify-center items-center pb-3'>
-                <h2 className='font-bold text-lg'>Upload Product</h2>
+                <h2 className='font-bold text-lg'>Upload Your Art</h2>
                 <div className='w-fit ml-auto text-2xl hover:text-red-600 cursor-pointer' onClick={onClose}>
                     <CgClose/>
                 </div>
             </div>
             <form  className='grid p-4 gap-3 overflow-y-scroll h-full pb-5' onSubmit={handleSubmit}>
-              <label htmlFor='productName'>Product Name:</label>
+              <label htmlFor='productName'>Art Name:</label>
               <input 
                 type='text'
                 id='productName'
@@ -109,7 +109,7 @@ const UploadProduct = ({
                 className='p-2 bg-slate-100 border rounded '
                 required
               /> 
-              <label htmlFor='brandName' className='mt-3'>Brand Name:</label>
+              <label htmlFor='brandName' className='mt-3'>Artist Name:</label>
             <input 
                 type='text'
                 id='brandName'
@@ -121,7 +121,7 @@ const UploadProduct = ({
                 required
               /> 
 
-              <label htmlFor='category' className='mt-3'>Category:</label>
+              <label htmlFor='category' className='mt-3'>Art Category:</label>
               <select required value={data.category} name='category' onChange={handleOnChange} className='p-2 bg-slate-100 border rounded '>
               <option value={""}>Select Category</option>
                 {
@@ -133,7 +133,7 @@ const UploadProduct = ({
                 }
               </select>
               
-              <label htmlFor='category' className='mt-3'>Product Image:</label>
+              <label htmlFor='category' className='mt-3'>Art Images:</label>
               <label htmlFor='uploadImageInput'>
               <div className='p-2 bg-slate-100 border rounded h-32 w-full flex justify-center items-center cursor-pointer'>
                 <div className='text-slate-500 flex justify-center items-center flex-col gap-2'>

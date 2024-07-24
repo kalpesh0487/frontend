@@ -54,7 +54,7 @@ const Header = () => {
     }
   }
   return (
-    <header className='h-16 shadow-md bg-white fixed z-40 w-full'>
+    <header className='h-16 shadow-md bg-[#F2EAD3] border border-black fixed z-40 w-full'>
       <div className='h-full container mx-auto flex items-center px-4 justify-between'>
         <div className=''>
           <Link to={"/"}>
@@ -62,9 +62,9 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow-md pl-2'>
-          <input type='text' placeholder='serach your product...' className='w-full outline-none' onChange={handleSearch} value={search}/>
-          <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white'>
+        <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow-md pl-2  border-black'>
+          <input type='text' placeholder='serach your product...' className='px-4 w-full outline-none bg-[#F2EAD3] placeholder-[#3F2305]' onChange={handleSearch} value={search}/>
+          <div className='text-lg min-w-[50px] h-8 bg-[#6F4E37] flex items-center justify-center rounded-r-full text-white '>
             <GrSearch/>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Header = () => {
                 <div className='text-2xl cursor-pointer relative flex justify-center' onClick={()=>setMenuDisplay(preve => !preve)}>
             {
               user?.profilePic ?(
-                <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name}/>
+                <img src={user?.profilePic} className='w-10 h-10 rounded-full border-2 border-black' alt={user?.name}/>
               ): (
                 <FaRegUserCircle/>
               )
@@ -86,11 +86,11 @@ const Header = () => {
             }
             {
               menuDisplay && (
-                <div className='absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded'>
-                <nav>
+                <div className='absolute bg-[#6F4E37]  bottom-0 top-11 h-fit p-2 shadow-lg rounded'>
+                <nav className='bg-[#6F4E37] text-white '>
                   {
                     user?.role === ROLE.ADMIN && (
-                      <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2 ' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
+                      <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block p-2 ' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
                     )
                   }
                 </nav>
@@ -108,7 +108,7 @@ const Header = () => {
                     <FaShoppingCart/>
                 </span>
            
-                <div className='bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
+                <div className='bg-[#6F4E37] text-white hover:bg-[#3F2305] w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
                   <p className='text-sm'>{context?.cartProductCount}</p>
                 </div>
                 </Link>
@@ -118,9 +118,9 @@ const Header = () => {
           <div>
             {
               user?._id ?(
-                <button onClick={handleLogout} className='px-3 py-1 rounded-full bg-red-600 text-white hover:bg-red-700'>Logout</button>
+                <button onClick={handleLogout} className='px-3 py-1 rounded-full bg-[#6F4E37] text-white hover:bg-[#3F2305]'>Logout</button>
               ):(
-                <Link to={"/login"} className='px-3 py-1 rounded-full bg-red-600 text-white hover:bg-red-700'>
+                <Link to={"/login"} className='px-3 py-1 rounded-full bg-[#6F4E37] text-white hover:bg-[#3F2305]'>
                 Login
               </Link>
               )

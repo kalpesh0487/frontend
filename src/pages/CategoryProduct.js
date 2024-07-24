@@ -103,7 +103,7 @@ const CategoryProduct = () => {
       {/*** desktop version */}
       <div className='hidden lg:grid grid-cols-[200px,1fr]'>
         {/** left side  */}
-        <div className='bg-white p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
+        <div className='bg-[#F2EAD3] border border-black scrollbar-none p-2 min-h-[calc(100vh-120px)] overflow-y-scroll'>
           {/**sort by */}
           <div className=''>
             <h3 className='text-base uppercase font-medium text-black border-b pb-2 border-slate-300'>Sort By</h3>

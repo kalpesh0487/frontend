@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import image1 from '../assest/assest/banner/img1.webp'
-import image2 from '../assest/assest/banner/img2.webp'
-import image3 from '../assest/assest/banner/img3.jpg'
-import image4 from '../assest/assest/banner/img4.jpg'
-import image5 from '../assest/assest/banner/img5.webp'
+import image1 from '../assest/assest/banner/poster1Desktop.png'
+import image2 from '../assest/assest/banner/posterDesktop2.png'
+import image3 from '../assest/assest/banner/pD4.png'
+import image4 from '../assest/assest/banner/posterDesktop4.png'
+import image5 from '../assest/assest/banner/pdD5.png'
 
-import image1Mobile from '../assest/assest/banner/img1_mobile.jpg'
-import image2Mobile from '../assest/assest/banner/img2_mobile.webp'
-import image3Mobile from '../assest/assest/banner/img3_mobile.jpg'
-import image4Mobile from '../assest/assest/banner/img3_mobile.jpg'
-import image5Mobile from '../assest/assest/banner/img5_mobile.png'
+import image1Mobile from '../assest/assest/banner/poster1Mobile.png'
+import image2Mobile from '../assest/assest/banner/posterMobile2.png'
+import image3Mobile from '../assest/assest/banner/posterMobile3.png'
+import image4Mobile from '../assest/assest/banner/pD4M.png'
+import image5Mobile from '../assest/assest/banner/pM5.png'
 
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa6'
 
@@ -58,14 +58,14 @@ const BannerProduct = () => {
 
 
   return (
-    <div className='container mx-auto px-4 rounded'>
-        <div className='h-56 md:h-72 w-full bg-slate-200 relative'>
+    <div className='container mx-auto  rounded border border-black'>
+        <div className='h-56 md:h-96 w-full bg-slate-200 relative '>
             <div className='absolute z-10 h-full w-full md:flex items-center hidden'>
                 <div className='flex justify-between w-full text-2xl'>
-                <button className='bg-white shadow-md rounded-full p-1' onClick={prevImage}>
+                <button className='bg-black text-[#FED8B1] shadow-md rounded-full p-1' onClick={prevImage}>
                     <FaAngleLeft/>
                 </button>
-                <button className='bg-white shadow-md rounded-full p-1' onClick={nextImage}>
+                <button className='bg-black text-[#FED8B1] shadow-md rounded-full p-1' onClick={nextImage}>
                     <FaAngleRight/>
                 </button>
                 </div>
@@ -94,7 +94,7 @@ const BannerProduct = () => {
                 mobileImages.map((imageURl, index)=>{
                     return (
                         <div 
-                            className='w-full h-full min-w-full min-h-full transition-all ' 
+                            className='w-full h-full min-w-full min-h-full transition-all border border-black' 
                             key={imageURl}
                             style={{transform: `translateX(-${currentImage *  100}%)`}}
                         >
