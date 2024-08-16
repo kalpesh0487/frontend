@@ -10,8 +10,13 @@ import { useEffect, useState } from 'react';
 import Context from './context';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/userSlice';
+import CursorPointer from './CursorPointer';
 
 function App() {
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  const [isAboveTablet, setIsAboveTablet] = useState(false);
+
   const dispatch = useDispatch()
   const [cartProductCount, setCartProductCount] = useState(0)
 
@@ -43,6 +48,36 @@ function App() {
     fetchUserAddToCart()
   }, [])
 
+  useEffect(() => {
+    const handleMouseMovement = (e) => {
+      setX(e.clientX);
+      setY(e.clientY);
+    };
+
+    document.addEventListener('mousemove', handleMouseMovement);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMovement);
+    };
+  }, [x,y]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsAboveTablet(true);
+      } else {
+        setIsAboveTablet(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call on mount to set initial state
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
   <>
   <Context.Provider value={{
@@ -58,6 +93,7 @@ function App() {
       <Outlet/>
     </main>
     <Footer/>
+    {isAboveTablet && <CursorPointer x={x} y={y} />}
     </Context.Provider>
   </>
   );
