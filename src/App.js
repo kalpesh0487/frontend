@@ -10,12 +10,13 @@ import { useEffect, useState } from 'react';
 import Context from './context';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/userSlice';
+import LocomotiveScroll from 'locomotive-scroll';
 import CursorPointer from './CursorPointer';
-
 function App() {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
   const [isAboveTablet, setIsAboveTablet] = useState(false);
+  const locomotiveScrollRef = useRef(null); // Ref for LocomotiveScroll instance
 
   const dispatch = useDispatch()
   const [cartProductCount, setCartProductCount] = useState(0)
@@ -65,8 +66,18 @@ function App() {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setIsAboveTablet(true);
+        if (!locomotiveScrollRef.current) {
+          locomotiveScrollRef.current = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+          });
+        }
       } else {
         setIsAboveTablet(false);
+        if (locomotiveScrollRef.current) {
+          locomotiveScrollRef.current.destroy();
+          locomotiveScrollRef.current = null;
+        }
       }
     };
 
@@ -75,6 +86,9 @@ function App() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (locomotiveScrollRef.current) {
+        locomotiveScrollRef.current.destroy();
+      }
     };
   }, []);
 
@@ -89,7 +103,7 @@ function App() {
       position='top-left'
     />
     <Header/>
-    <main className='min-h-[calc(100vh-120px)] bg-[#F2EAD3] pt-16'>
+    <main className='min-h-[calc(100vh-120px)] bg-[#F2EAD3] pt-16' data-scroll-container>
       <Outlet/>
     </main>
     <Footer/>

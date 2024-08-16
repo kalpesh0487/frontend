@@ -54,7 +54,7 @@ const Header = () => {
     }
   }
   return (
-    <header className='h-16 shadow-md bg-[#F2EAD3] border border-black fixed z-40 w-full'>
+    <header className='h-16 shadow-md bg-[#FDEACF] border border-black fixed z-40 w-full'>
       <div className='h-full container mx-auto flex items-center px-4 justify-between'>
         <div className=''>
           <Link to={"/"}>
@@ -63,7 +63,7 @@ const Header = () => {
         </div>
 
         <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow-md pl-2  border-black'>
-          <input type='text' placeholder='serach your product...' className='px-4 w-full outline-none bg-[#F2EAD3] placeholder-[#3F2305]' onChange={handleSearch} value={search}/>
+          <input type='text' placeholder='serach your product...' className='px-4 w-full outline-none bg-[#FDEACF] placeholder-[#3F2305]' onChange={handleSearch} value={search}/>
           <div className='text-lg min-w-[50px] h-8 bg-[#6F4E37] flex items-center justify-center rounded-r-full text-white '>
             <GrSearch/>
           </div>
@@ -103,7 +103,7 @@ const Header = () => {
           {
              
             user?._id && (
-                <Link to={"cart"} className='text-2xl cursor-pointer relative'>
+                <Link to={"cart"} className='text-2xl cursor-pointer relative text-black'>
                 <span>
                     <FaShoppingCart/>
                 </span>
